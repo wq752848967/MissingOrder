@@ -13,7 +13,7 @@ public class CharNodeTools {
         int originIndex =  0;
         TreeSet<SortNode> sortList = new TreeSet<SortNode>(new Comparator<SortNode>() {
             public int compare(SortNode o1, SortNode o2) {
-                int r = PriorityComparetor.compare(o1.getPriority(),o2.getPriority());
+                int r = PriorityComparetor.compare("","",o1.getPriority(),o2.getPriority());
                 return r==0?(o1.getValue().compareTo(o2.getValue())):r;
             }
         });
@@ -44,6 +44,9 @@ public class CharNodeTools {
 
                 for(String c:n.getPre()){
                     String tempPriority = modelOrder.get(c);
+                    if(c.contains("-")){
+                        tempPriority = modelOrder.get(c.split("-")[0]);
+                    }
                     SortNode node = new SortNode(tempPriority,c);
                     sortList.add(node);
 
@@ -52,7 +55,7 @@ public class CharNodeTools {
 
                     SortNode node = sortList.first();
                     sortList.remove(node);
-                    tempConsole+=node.getValue();
+                    tempConsole+=node.getValue()+" ";
                     tempAddCount++;
                 }
             }
@@ -67,6 +70,9 @@ public class CharNodeTools {
             if(n.getPost().size()>0){
                 for(String c:n.getPost()){
                     String tempPriority = modelOrder.get(c);
+                    if(c.contains("-")){
+                        tempPriority = modelOrder.get(c.split("-")[0]);
+                    }
                     SortNode node = new SortNode(tempPriority,c);
                     sortList.add(node);
 
@@ -74,7 +80,7 @@ public class CharNodeTools {
                 while(!sortList.isEmpty()){
                     SortNode node = sortList.first();
                     sortList.remove(node);
-                    tempConsole+=node.getValue();
+                    tempConsole+=node.getValue()+" ";
                     tempAddCount++;
                 }
             }

@@ -6,16 +6,28 @@ public class OpenListNode {
     private int costG;
     private int costH;
     private boolean[] historyFlag;
+    private int originTraceIndex  = -1;
     private CharNode[] strContext;
 
-    public OpenListNode(int strLength,boolean[] his) {
+    public OpenListNode(int strLength,boolean[] his,int originTraceIndex) {
         this.strContext = new CharNode[strLength];
         this.historyFlag = new boolean[his.length];
+        this.originTraceIndex = originTraceIndex;
         for(int i=0;i<his.length;i++){
             this.historyFlag[i] = his[i];
         }
     }
-    public OpenListNode(int strLength) {
+
+    public int getOriginTraceIndex() {
+        return originTraceIndex;
+    }
+
+    public void setOriginTraceIndex(int originTraceIndex) {
+        this.originTraceIndex = originTraceIndex;
+    }
+
+    public OpenListNode(int strLength,int index) {
+        this.originTraceIndex = index;
         this.strContext = new CharNode[strLength];
     }
     public boolean[] getHis(){

@@ -154,15 +154,18 @@ public class ModelPriotity {
         //System.out.println("replace:"+originPri+"  "+replaceOri);
 
 
-        if(PriorityComparetor.compare(originPri,replaceOri)>0){
+        if(PriorityComparetor.compare("","",originPri,replaceOri)>0){
             if(originPri.length()<replaceOri.length()){
                 return originPri;
             }
         }
-        if(PriorityComparetor.compare(originPri,replaceOri)<0){
+        if(PriorityComparetor.compare("","",originPri,replaceOri)<0){
             if(originPri.length()>replaceOri.length()){
                 return replaceOri;
             }
+        }
+        if((!originPri.contains(","))&&(!replaceOri.contains(","))){
+            return Math.max(Integer.parseInt(originPri),Integer.parseInt(replaceOri))+"";
         }
         String resOri = ",";
         while(originPri.length()!=replaceOri.length()){
@@ -172,6 +175,12 @@ public class ModelPriotity {
                 replaceOri = replaceOri.substring(0,replaceOri.lastIndexOf(","));
             }
         }
+        if(!originPri.equals(replaceOri)){
+            if((!originPri.contains(","))||(!replaceOri.contains(","))){
+                return Math.max(Integer.parseInt(originPri),Integer.parseInt(replaceOri))+"";
+            }
+        }
+
 
         String subOri = originPri.split(",")[originPri.split(",").length-1];
         String subReplace = replaceOri.split(",")[replaceOri.split(",").length-1];
@@ -210,13 +219,13 @@ public class ModelPriotity {
 
 
     public static void main(String[] args) {
-        PetriNet net = ModelLoader.load("/Users/wangqi/Desktop/bpmn/bxml/test01.xml");
+        PetriNet net = ModelLoader.load("/Users/wangqi/Desktop/bpmn/bxml/withoutLoop/test3-25.xml");
         //System.out.println(net.getpMap().get("P0").getNext().get(0));
-
+        ModelAnalysis.findLoop(net);
         makePriority(net);
         for(String key:net.gettMap().keySet()){
             System.out.print("id:"+net.gettMap().get(key).getId());
-            System.out.println("  next:"+net.gettMap().get(key).getPriority());
+            System.out.println("  pri:"+net.gettMap().get(key).getPriority());
         }
     }
 }

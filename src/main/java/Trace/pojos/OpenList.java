@@ -38,7 +38,9 @@ public class OpenList {
     }
 
     private TreeSet<OpenListNode> openlist = null;
-
+    public void clear(){
+        openlist.clear();
+    }
     public int size(){
         return openlist.size();
     }
@@ -51,9 +53,14 @@ public class OpenList {
     public void removeNode(OpenListNode node){
          openlist.remove(node);
     }
-    public OpenListNode getMinCostNode(){
+    public OpenListNode getMinCostNode() throws Exception{
+        int preSize = openlist.size();
         OpenListNode node =  openlist.first();
         openlist.remove(node);
+        int afterSize=openlist.size();
+        if(preSize==afterSize){
+            throw new Exception("remove err!");
+        }
         return node;
     }
 }

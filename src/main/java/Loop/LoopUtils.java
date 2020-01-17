@@ -39,20 +39,33 @@ public class LoopUtils {
             while(queue.size()>0||first){
                 first = false;
                 while((startplace==null)||(!startplace.getId().equals(endPlaceId))){
-                    if(startplace==null){
+                    if(startplace==null&&queue.size()==0){
+                        break;
+                    }
+                    while(startplace==null&& queue.size()>0){
                         startplace = (Place)queue.poll();
                     }
-                    if(startplace.getNext().size()>1){
+                    if(startplace==null){
+                        continue;
+                    }
+                    if(startplace.getNext()!=null&&startplace.getNext().size()>1){
                         break;
                     }else{
-                        Transition t = (Transition)startplace.getNext().get(0);
-                        for(PNode pnode:t.getNext()){
-                            if(!pnode.getId().equals(endPlaceId)){
-                                queue.offer(pnode);
+                        if(startplace.getNext()!=null){
+                            Transition t = (Transition)startplace.getNext().get(0);
+                            for(PNode pnode:t.getNext()){
+                                if(!pnode.getId().equals(endPlaceId)){
+                                    queue.offer(pnode);
+                                }
+                                startplace = null;
                             }
-                            startplace = null;
                         }
                     }
+                }
+                if(startplace==null){
+                    //无循环直接跳出
+                    results.add(trace);
+                    break;
                 }
                 //System.out.println("branch start:"+startplace.getId()+"  "+startplace.getNext().size());
                 //startPlace is the branch entrance
@@ -83,10 +96,24 @@ public class LoopUtils {
                     }
 
                 }
+                //分支 删减
+                for(int i=0;i<branchs.size();i++){
+                    String[] branch = branchs.get(i);
+                    int count = 0;
+                    for(String t:trace){
+                        if(t.equals(branch[0])){
+                            count++;
+                        }
+                    }
+                    if(count == 0){
+                        branchs.remove(i);
+                    }
+
+
+                }
                 for(String[] branch:addBranch){
                     branchs.add(branch);
                 }
-
 //                for (String[] b:branchs){
 //                    System.out.println("branch:");
 //                    for (String s:b){
@@ -94,6 +121,7 @@ public class LoopUtils {
 //                    }
 //                    System.out.println("");
 //                }
+
 
                 //2.归属问题
                 ArrayList<String> permuList = PermutationUtil.getAllPermutation(loopCount+1);
@@ -137,6 +165,7 @@ public class LoopUtils {
                 }
 
             }
+            System.out.println("end while");
             //给非循环元素打标
             //loop start / end
             markLoop(results,loop,loopCount+1,net.getpMap().get(loop.getStart()));
@@ -145,7 +174,7 @@ public class LoopUtils {
         }
         return results;
     }
-    public static void markLoop(ArrayList<String[]> results,PLoop pLoop,int loopCount,Place startPlace){
+    private static void markLoop(ArrayList<String[]> results,PLoop pLoop,int loopCount,Place startPlace){
 
         //获取当前循环所有元素
         String loopAllTransition = "";
@@ -153,6 +182,7 @@ public class LoopUtils {
         queue.offer(startPlace);
         PNode temp = null;
         while(queue.size()>0){
+
             temp = queue.poll();
             if(temp.getType()==PNodeType.TRANSITION){
                 if(!loopAllTransition.contains(temp.getId())){
@@ -197,13 +227,13 @@ public class LoopUtils {
 
     }
 
-    public static String[] getAllTransition(Transition pnode,String endBranchId){
+    private static String[] getAllTransition(Transition pnode,String endBranchId){
         //
         ArrayList<String> res = new ArrayList<String>();
         getTransition(pnode,endBranchId,res);
         return res.toArray(new String[res.size()]);
     }
-    public static void getTransition(Transition pnode,String endBranchId,ArrayList<String> res){
+    private static void getTransition(Transition pnode,String endBranchId,ArrayList<String> res){
         res.add(pnode.getId());
         while(pnode.getNext().size()==1){
 
@@ -222,7 +252,7 @@ public class LoopUtils {
             }
         }
     }
-    public static String findBranchEnd(Place startBranchPlace){
+    private static String findBranchEnd(Place startBranchPlace){
 
        String startPriority = startBranchPlace.getNext().get(0).getPriority();
        PNode endTransition = startBranchPlace.getNext().get(0).getNext().get(0).getNext().get(0);

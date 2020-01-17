@@ -12,11 +12,12 @@ import java.util.Map;
 
 public class ModelLoader {
     public static void main(String[] args) {
-        PetriNet net = load("/Users/wangqi/Desktop/bpmn/bxml/Idea.pptx.xml");
+        PetriNet net = load("/Users/wangqi/Desktop/bpmn/bxml/withLoop/loop1-1-9.xml");
         System.out.println("pMap:");
         for(String key:net.getpMap().keySet()){
             System.out.print("id:"+net.getpMap().get(key).getId());
             System.out.println("  next:"+net.getpMap().get(key).getNext().size());
+            System.out.println("  next:"+net.getpMap().get(key).getPreId());
         }
     }
     public static PetriNet load(String path){
@@ -57,7 +58,16 @@ public class ModelLoader {
             }
             //System.out.println("arc: "+sId+" to "+tId);
             source.getNext().add(target);
-            target.setPreId(source.getId());
+            if(target.getPreId().length()>0){
+                int curPre = Integer.parseInt(target.getPreId().substring(1));
+                int nextPre = Integer.parseInt(source.getId().substring(1));
+                if(nextPre>curPre){
+                    target.setPreId(source.getId());
+                }
+            }else{
+                target.setPreId(source.getId());
+            }
+
         }
         PNode startNode = pMap.get("P0");
         PNode endNode = pMap.get("P"+(pMap.size()-1));

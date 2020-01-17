@@ -1,225 +1,23 @@
 package Trace;
 
-
 import Trace.pojos.CharNode;
 import Trace.pojos.OpenList;
 import Trace.pojos.OpenListNode;
 import Trace.utils.CharNodeTools;
 import Trace.utils.CostCalculator;
 import Trace.utils.PriorityComparetor;
+
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Map;
 
-/**
- *
- * A * version
- *
- */
-public class TraceDriver {
-
+public class OnePassDriver {
     public static int minCost = Integer.MAX_VALUE;
     public  static OpenListNode min_Context =  null;
     private static final boolean LOG_OUT = false;
     public static String testResult = "";
 
-    public static void main(String[] args) {
-        //错位一个
-
-        Map<String,String> modelOrder = new HashMap<String, String>();
-        modelOrder.put("a","1");
-        modelOrder.put("b","2");
-        modelOrder.put("c","3");
-        modelOrder.put("d","4");
-        modelOrder.put("e","5");
-        modelOrder.put("f","6");
-
-
-        ArrayList<String> modelOrderList1 = new ArrayList<String>();
-        modelOrderList1.add("a");
-        modelOrderList1.add("b");
-        modelOrderList1.add("c");
-        modelOrderList1.add("d");
-        modelOrderList1.add("e");
-        modelOrderList1.add("f");
-
-        ArrayList<ArrayList<String>> listArray = new ArrayList<ArrayList<String>>();
-        listArray.add(modelOrderList1);
-
-
-        String[] traceSection = new String[6];
-        traceSection[0] = "b";
-        traceSection[1] = "d";
-        traceSection[2] = "a";
-        traceSection[3] = "c";
-        traceSection[4] = "e";
-        traceSection[5] = "f";
-
-
-
-        Map<String,Integer> traceOrder = new HashMap<String, Integer>();
-        for (int i = 0; i < traceSection.length; i++) {
-            traceOrder.put(traceSection[i],i);
-        }
-
-
-        OpenList openList = new OpenList();
-        //rebuild(openList,listArray,modelOrder,traceSection,traceOrder,0);
-        /* test code */
-        if(min_Context!=null){
-            OpenListNode sampleNodeContext = min_Context;
-            System.out.println(" ");
-            System.out.println("_______________________________________________________");
-            System.out.println("result console cost info:"+sampleNodeContext.getCostF());
-            CharNode[] sampleNodes = sampleNodeContext.getStrContext();
-            String reuslt = CharNodeTools.getConsoleString(modelOrder,sampleNodes);
-            testResult = reuslt;
-            System.out.println(testResult);
-        }
-
-    }
-    public static OpenListNode initOpenList(String[] trace,ArrayList<ArrayList<String>> modelOrderList,int index){
-        OpenListNode openListNode = new OpenListNode(trace.length,index);
-        for (int i = 0; i < trace.length; i++) {
-            CharNode cNode = new CharNode();
-            cNode.setIndex(i);
-            cNode.setCur(trace[i]);
-            boolean[] transRecord = new boolean[trace.length];
-            openListNode.setHistory(transRecord);
-            openListNode.setNode(i,cNode);
-        }
-        //初始化代价
-        openListNode.setCostG(0);
-        int costH  = CostCalculator.calcCostH(modelOrderList,openListNode.getStrContext());
-        openListNode.setCostH(costH);
-        return openListNode;
-    }
-    public static void rebuild(ArrayList<String[]> traceList,OpenList openList,
-                               ArrayList<ArrayList<String>> modelOrderList,Map<String,String> modelOrder,
-                               String traceSection[], Map<String,Integer> traceOrder)throws Exception{
-
-
-
-
-        //init open list
+    public static void repair(ArrayList<String[]> traceList, OpenList openList, ArrayList<ArrayList<String>> modelOrderList, Map<String,String> modelOrder, String traceSection[], Map<String,Integer> traceOrder){
         ArrayList<String[]> originTraceList  =  traceList;
-        HashSet<String> costHis = new HashSet<String>();
-        HashMap<String,Integer> traceHis = new HashMap();
-        //初始化openlist ,以trace中的每一个元素作为划分一句初始化
-//        for(int i=0;i<traceSection.length;i++){
-//            int costG = 0;
-//            String referTrans = traceSection[i];
-//            boolean[] transRecord = new boolean[traceSection.length];
-//
-//            /**/
-//            String referPriority = modelOrder.get(referTrans);
-//            transRecord[i] = true;
-//            //切分
-//            OpenListNode openListNode = new OpenListNode(traceSection.length);
-//            openListNode.setHistory(transRecord);
-//            CharNode referNode = new CharNode();
-//            referNode.setCur(referTrans);
-//            /**/
-//            referNode.setIndex(traceOrder.get(referTrans));
-//            for(int j=0;j<traceSection.length;j++){
-//                if(i!=j){
-//                    String cmpTrans = traceSection[j];
-//                    String cmpPriority = modelOrder.get(cmpTrans);
-//
-//                    int cmpOrder = PriorityComparetor.compare(referPriority,cmpPriority);
-//                    //cmpOrder<0  refer前  cmpOrder>0  refer  后
-//                    if(cmpOrder>0){
-//                        //cmp < refer
-//                        if(j<i){
-//                            CharNode tempNode = new CharNode();
-//                            tempNode.setCur(cmpTrans);
-//                            /**/
-//                            tempNode.setIndex(j);
-//                            openListNode.setNode(j,tempNode);
-//
-//                        }else{
-//                            //add costG
-//                            costG+=(traceOrder.get(cmpTrans)-traceOrder.get(referTrans));
-//                            referNode.addPre(cmpTrans);
-//                        }
-//                    }else if(cmpOrder<0){
-//                        //cmp>refer
-//                        if(j>i){
-//                            CharNode tempNode = new CharNode();
-//                            tempNode.setCur(cmpTrans);
-//                            /**/
-//                            tempNode.setIndex(traceOrder.get(cmpTrans));
-//                            openListNode.setNode(j,tempNode);
-//
-//                        }else{
-//                            //add costG
-//                            costG+=(traceOrder.get(referTrans)-traceOrder.get(cmpTrans));
-//                            referNode.addPost(cmpTrans);
-//                        }
-//                    }else{
-//                        //无顺序关系，保持
-//                        CharNode tempNode = new CharNode();
-//                        tempNode.setCur(cmpTrans);
-//                        /**/
-//                        tempNode.setIndex(traceOrder.get(cmpTrans));
-//                        openListNode.setNode(j,tempNode);
-//                    }
-//
-//                }
-//
-//            }
-//            openListNode.setNode(i,referNode);
-//            //set costG
-//            openListNode.setCostG(costG);
-//            //cal future costH
-//            int costH  = CostCalculator.calcCostH(modelOrderList,openListNode.getStrContext());
-//
-//
-//            if(costH == 0){
-//                if(CostCalculator.isFinished(modelOrder,openListNode.getStrContext())){
-//                    if(minCost>openListNode.getCostF()){
-//                        minCost = openListNode.getCostF();
-//                        min_Context = openListNode;
-//                    }
-//                }
-//
-//
-////                System.out.println("--------------init------------------");
-////                for(CharNode cn:openListNode.getStrContext()){
-////                    if(cn!=null){
-////                        System.out.println("info:"+cn.getIndex()+" "+cn.getPre()+" ["+cn.getCur()+"]  "+cn.getPost());
-////                    }
-////                }
-////                System.out.println(CostCalculator.isFinished(modelOrder,openListNode.getStrContext()));
-//
-//            }
-//            openListNode.setCostH(costH);
-//            openList.add(openListNode);
-//
-//
-//
-//
-//
-//        }
-        //System.out.println("init openlist size:"+openList.size());
-        //test code
-//        OpenListNode sampleNodeContext = openList.getMinCostNode();
-//        System.out.println("info:"+sampleNodeContext.getCostF());
-//
-//        CharNode[] sampleNodes = sampleNodeContext.getStrContext();
-//        String reuslt = CharNodeTools.getConsoleString("abcde",sampleNodes);
-//        testResult = reuslt;
-//
-//        System.out.println(testResult);
-        //test code end
-
-
-
-
-
-
-
         //循环主体  取最小 切分，在放入
         while(!openList.IsEmpty()){
             //get mini  node context
@@ -227,7 +25,7 @@ public class TraceDriver {
             try{
                 minNodeContext = openList.getMinCostNode();
             }catch (Exception e){
-                throw e;
+
             }
             openList.removeNode(minNodeContext);
 
@@ -244,42 +42,23 @@ public class TraceDriver {
                 continue;
             }
 
-//
+
 
             /* console code */
             CharNode[] sampleNodes = minNodeContext.getStrContext();
-
+            String reuslt = CharNodeTools.getConsoleString(modelOrder,sampleNodes);
             if(LOG_OUT){
-                String reuslt = CharNodeTools.getConsoleString(modelOrder,sampleNodes);
                 System.out.print("temp min,cost: "+minNodeContext.getCostG());
                 System.out.println(" | trace: "+reuslt);
             }
-            System.out.println("temp min,cost: "+minNodeContext.getCostF()+"/"+minNodeContext.getCostG()+"/"+minNodeContext.getCostH());
-            //System.out.println(" | trace: "+reuslt);
-
-//            OpenListNode nnn = openList.getMinCostNode();
-//            System.out.print("temp min before "+nnn.getCostG());
-//            reuslt = CharNodeTools.getConsoleString(modelOrder,nnn.getStrContext());
-//            System.out.println(" | trace: "+reuslt);
-            /* console code end */
 
 
 
 
 
 
-            //get missing char from this node context
 
 
-            //暂时不做missing 元素的检索
-//            Character[] missingChars = minNodeContext.getMissingOrder(sOrigin);
-//            /* console code */
-//            System.out.print("missing order item:");
-//            for(char c:missingChars){
-//                System.out.print(" "+c);
-//            }
-//            System.out.println("");
-//            /* console code end */
 
 
             //重新切分 ，重新放入
@@ -515,30 +294,12 @@ public class TraceDriver {
                 for(String postItem:postList){
                     reCharNode.getPost().add(postItem);
                 }
-//                reCharNode.setPre(preList);
-//                reCharNode.setPost(postList);
 
                 newOpenListNode.setNode(newReCharIndex,reCharNode);
                 //重新计算cost
                 //pre init
                 int newCostH =  CostCalculator.calcCostH(modelOrderList,newOpenListNode.getStrContext());
-                int newSumCostG=oldCostG+newCostG;
-                newOpenListNode.setCostG(newSumCostG);
-
-                String newKey = newSumCostG+"/"+newCostH;
-                if(costHis.contains(newKey)){
-                    //System.out.println("skkkkkkk");
-                    continue;
-                }else {
-                    costHis.add(newKey);
-                }
-//                String traceKey = CharNodeTools.getConsoleString(modelOrder,newOpenListNode.getStrContext());
-//                if (traceHis.containsKey(traceKey)){
-//                    continue;
-//                }else{
-//                    traceHis.put(traceKey,newSumCostG);
-//                }
-
+                newOpenListNode.setCostG(oldCostG+newCostG);
 
                 if(newCostH==0)
                 {
@@ -552,13 +313,6 @@ public class TraceDriver {
                                 String rr = CharNodeTools.getConsoleString(modelOrder,newOpenListNode.getStrContext());
                                 System.out.println(reTrans+" /end trace:"+rr);
                             }
-//                            System.out.println("--------------------------------:"+reTrans+"  "+newCostG+"   "+newCostH+"   "+minNodeContext.getCostG() );
-//                            for(CharNode cn:newOpenListNode.getStrContext()){
-//                                if(cn!=null){
-//                                    System.out.println("info:"+cn.getIndex()+" "+cn.getPre()+" ["+cn.getCur()+"]  "+cn.getPost());
-//                                }
-//                            }
-//                            System.out.println(CostCalculator.isFinished(modelOrder,newOpenListNode.getStrContext()));
                         }
                     }else{
 
@@ -585,11 +339,6 @@ public class TraceDriver {
                             String rr = CharNodeTools.getConsoleString(modelOrder,newOpenListNode.getStrContext());
                             System.out.println(reTrans+" /end trace:"+rr);
                         }
-//                        for(int z=0;z<newOpenListNode.getHis().length;z++){
-//                            boolean b = newOpenListNode.getHis()[z];
-//                            System.out.println(traceSection[z]+" "+b);
-//                        }
-//                        System.out.println("");
                     }else{
 
                     }
@@ -599,15 +348,20 @@ public class TraceDriver {
 
 
             }
-//            System.out.print("temp min end ");
-//            reuslt = CharNodeTools.getConsoleString(modelOrder,openList.getMinCostNode().getStrContext());
-//            System.out.println(" | trace: "+reuslt);
 
+           //end while
+            if(!openList.IsEmpty()){
+                OpenListNode node = null;
+                try{
+                    node = openList.getMinCostNode();
+                }catch (Exception e){
 
+                }
 
+                openList.clear();
+                openList.add(node);
+            }
 
         }
-
     }
-
 }

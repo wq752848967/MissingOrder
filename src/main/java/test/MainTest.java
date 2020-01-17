@@ -1,5 +1,7 @@
 package test;
 
+import java.util.LinkedList;
+
 public class MainTest {
     public static void pringArray(int [] arr,int n){
         // 打印数组
@@ -33,8 +35,16 @@ public class MainTest {
     }
 
     public static void main(String[] args) {
-        String r = "123";
+        LinkedList<String> link = new LinkedList<String>();
+        link.add("0");
+        link.add("1");
+        link.add("2");
+        link.add("3");
+        link.add("4");
+        link.add(0,"x");
 
-        System.out.println(r.substring(1,r.length()));
+        for(String s:link){
+            System.out.println(s);
+        }
     }
 }
