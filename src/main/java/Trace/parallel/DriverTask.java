@@ -1,4 +1,4 @@
-package Trace;
+package Trace.parallel;
 
 import Trace.pojos.CharNode;
 import Trace.pojos.OpenList;
@@ -8,59 +8,43 @@ import Trace.utils.CostCalculator;
 import Trace.utils.PriorityComparetor;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Map;
 
-public class OnePassDriver {
-    public static int minCost = Integer.MAX_VALUE;
-    public  static OpenListNode min_Context =  null;
-    private static final boolean LOG_OUT = false;
-    public static String testResult = "";
+public class DriverTask implements Runnable {
 
-    public static void repair(int onePassCount,ArrayList<String[]> traceList, OpenList openList, ArrayList<ArrayList<String>> modelOrderList, Map<String,String> modelOrder, String traceSection[], Map<String,Integer> traceOrder){
-        ArrayList<String[]> originTraceList  =  traceList;
-        //循环主体  取最小 切分，在放入
-        while(!openList.IsEmpty()){
-            //get mini  node context
-            OpenListNode minNodeContext = null;
-            try{
-                minNodeContext = openList.getMinCostNode();
-            }catch (Exception e){
+    String traceSection[] = null;
+    Map<String,String> modelOrder = null;
+    ArrayList<String[]> originTraceList = null;
+    ArrayList<ArrayList<String>> modelOrderList = null;
+    public DriverTask(String traceSection[], Map<String,String> modelOrder,ArrayList<String[]> traceList
+    ,ArrayList<ArrayList<String>> modelOrderList) {
+        this.traceSection = traceSection;
+        this.modelOrder  = modelOrder;
+        originTraceList = traceList;
+        this.modelOrderList = modelOrderList;
+    }
 
-            }
-            openList.removeNode(minNodeContext);
-
-
-
-
-            if(minNodeContext.getCostF()>=minCost){
-                if(LOG_OUT){
-                    CharNode[] sampleNodes = minNodeContext.getStrContext();
-                    String reuslt = CharNodeTools.getConsoleString(modelOrder,sampleNodes);
-                    System.out.print("* skip temp min,cost: "+minNodeContext.getCostG());
-                    System.out.println(" | trace: "+reuslt);
+    public void run() {
+        HashSet<String> costHis = new HashSet<String>();
+        OpenListNode minNodeContext = null;
+        int count = 0;
+        boolean flag = true;
+        while(flag){
+            minNodeContext = PTraceDriver.getListNode();
+            if(minNodeContext==null){
+                try {
+                    Thread.sleep(50);
+                    count++;
+                }catch (Exception e){}
+                if(count>=50){
+                    flag = false;
                 }
                 continue;
             }
-
-
-
+            //System.out.println("temp:"+minNodeContext.getCostF()+"/"+minNodeContext.getCostG()+"/"+minNodeContext.getCostH());
             /* console code */
             CharNode[] sampleNodes = minNodeContext.getStrContext();
-            String reuslt = CharNodeTools.getConsoleString(modelOrder,sampleNodes);
-            if(LOG_OUT){
-                System.out.print("temp min,cost: "+minNodeContext.getCostG());
-                System.out.println(" | trace: "+reuslt);
-            }
-
-
-
-
-
-
-
-
-
-
             //重新切分 ，重新放入
             CharNode[] charNodes = minNodeContext.getStrContext();
             int oldCostG = minNodeContext.getCostG();
@@ -294,36 +278,46 @@ public class OnePassDriver {
                 for(String postItem:postList){
                     reCharNode.getPost().add(postItem);
                 }
+//                reCharNode.setPre(preList);
+//                reCharNode.setPost(postList);
 
                 newOpenListNode.setNode(newReCharIndex,reCharNode);
                 //重新计算cost
                 //pre init
                 int newCostH =  CostCalculator.calcCostH(modelOrderList,newOpenListNode.getStrContext());
-                newOpenListNode.setCostG(oldCostG+newCostG);
+                int newSumCostG=oldCostG+newCostG;
+                newOpenListNode.setCostG(newSumCostG);
+
+                String newKey = newSumCostG+"/"+newCostH;
+                if(costHis.contains(newKey)){
+                    //System.out.println("skkkkkkk");
+                    continue;
+                }else {
+                    costHis.add(newKey);
+                }
+//                String traceKey = CharNodeTools.getConsoleString(modelOrder,newOpenListNode.getStrContext());
+//                if (traceHis.containsKey(traceKey)){
+//                    continue;
+//                }else{
+//                    traceHis.put(traceKey,newSumCostG);
+//                }
+
 
                 if(newCostH==0)
                 {
                     //System.out.println("newCostH == 0");
                     //分支遍历结束  并未结束，进一步进行判断
                     if(CostCalculator.isFinished(modelOrder,newOpenListNode.getStrContext())){
-                        if(minCost>newOpenListNode.getCostF()){
-                            minCost = newOpenListNode.getCostF();
-                            min_Context = newOpenListNode;
-                            if(LOG_OUT){
-                                String rr = CharNodeTools.getConsoleString(modelOrder,newOpenListNode.getStrContext());
-                                System.out.println(reTrans+" /end trace:"+rr);
-                            }
+                        if(PTraceDriver.minCost>newOpenListNode.getCostF()){
+                            PTraceDriver.setMinInfo(newOpenListNode.getCostF(),newOpenListNode);
                         }
                     }else{
 
                         if(newCostG!=0){
                             newOpenListNode.setCostH(newCostH);
                             //是否存在完成的排序方式
-                            openList.add(newOpenListNode);
-                            if(LOG_OUT){
-                                String rr = CharNodeTools.getConsoleString(modelOrder,newOpenListNode.getStrContext());
-                                System.out.println(reTrans+" /end trace:"+rr);
-                            }
+                            PTraceDriver.addListNode(newOpenListNode);
+
 
                         }else{
                         }
@@ -334,11 +328,7 @@ public class OnePassDriver {
                     if(newCostG!=0){
                         newOpenListNode.setCostH(newCostH);
                         //是否存在完成的排序方式
-                        openList.add(newOpenListNode);
-                        if(LOG_OUT){
-                            String rr = CharNodeTools.getConsoleString(modelOrder,newOpenListNode.getStrContext());
-                            System.out.println(reTrans+" /end trace:"+rr);
-                        }
+                        PTraceDriver.addListNode(newOpenListNode);
                     }else{
 
                     }
@@ -348,28 +338,10 @@ public class OnePassDriver {
 
 
             }
-
-           //end while
-            int tempCounter = 0;
-            ArrayList<OpenListNode> list = new ArrayList<OpenListNode>();
-            while(tempCounter<onePassCount){
-                tempCounter++;
-                if(!openList.IsEmpty()){
-                    OpenListNode node = null;
-                    try{
-                        node = openList.getMinCostNode();
-                        list.add(node);
-                        openList.removeNode(node);
-                    }catch (Exception e){
-
-                    }
-                }
-            }
-            openList.clear();
-            for (OpenListNode node:list){
-                openList.add(node);
-            }
-
         }
+        System.out.println("end 1");
+        PTraceDriver.addResult();
+
+
     }
 }

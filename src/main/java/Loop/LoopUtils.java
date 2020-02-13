@@ -165,7 +165,6 @@ public class LoopUtils {
                 }
 
             }
-            System.out.println("end while");
             //给非循环元素打标
             //loop start / end
             markLoop(results,loop,loopCount+1,net.getpMap().get(loop.getStart()));

@@ -3,10 +3,8 @@ package repair;
 import Loop.LoopUtils;
 import Trace.OnePassDriver;
 import Trace.TraceDriver;
-import Trace.pojos.CharNode;
 import Trace.pojos.OpenList;
 import Trace.pojos.OpenListNode;
-import Trace.utils.CharNodeTools;
 import model.ModelAnalysis;
 import model.ModelLoader;
 import model.ModelPriotity;
@@ -20,21 +18,22 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Test_compare {
+public class Test_compare_Deeky {
     public static void main(String[] args) {
         //解析模型
-        for(int j=0;j<1;j++){
-            PetriNet net  = ModelLoader.load("/Users/wangqi/Desktop/bpmn/bxml/withoutLoop/test3-25.xml");
-            //循环检测
-            ModelAnalysis.findLoop(net);
-            //模型transition优先级标注
-            ModelPriotity.makePriority(net);
-            long startTime=System.currentTimeMillis();
-
+        int nodeCount = 30;
+        double per = 0.4;
+        long startTime=System.currentTimeMillis();
+        int unCorrectCount = 0;
+        for(int j=0;j<10;j++){
+            try {
+                Thread.sleep(10000);
+            }catch (Exception e){}
+            PetriNet net = ModelGenerate.generateSerialModel(nodeCount);
 
             //trace            0     1     2    3   4     5    6    7    8
-            String[] trace = {"T0","T1","T2","T3","T5","T4","T6","T7","T9","T11","T12","T14","T13","T15","T16","T17"};
-            trace = RandomTrace.random(0.9,trace);
+            String[] trace = TraceGenerate.generateSerialTrace(nodeCount);
+            trace = RandomTrace.random(per,trace);
             Map<String,Integer> traceOrder =  new HashMap<String, Integer>();
             for (int i = 0; i < trace.length; i++) {
                 traceOrder.put(trace[i],i);
@@ -80,7 +79,7 @@ public class Test_compare {
 
                 openListNode = TraceDriver.initOpenList(trace,modelOrderList,-1);
                 openList.add(openListNode);
-                OnePassDriver.repair(1,null,openList,modelOrderList,modelOrder,trace, traceOrder);
+                OnePassDriver.repair(10,null,openList,modelOrderList,modelOrder,trace, traceOrder);
 
             }
 
@@ -103,16 +102,15 @@ public class Test_compare {
 //            System.out.println(one_reuslt);
             int costA = sampleNodeContext.getCostF();
             int costD = sampleNodeContext2.getCostF();
-            if(costA==costD){
-                System.out.println("==  costA:"+costA+"   costD:"+costD);
-            }else{
-                System.out.println("==================================");
-                System.out.println("!=  costA:"+costA+"   costD:"+costD);
-                System.out.println("==================================");
+            if(costA!=costD){
+                System.out.println(costA+"/"+costD);
+                unCorrectCount++;
             }
 
-            long endTime=System.currentTimeMillis();
-            System.out.println("程序运行时间： "+(endTime-startTime)+"ms");
+
         }
+        long endTime=System.currentTimeMillis();
+        System.out.println("程序运行时间： "+(endTime-startTime)+"ms");
+        System.out.println("count:"+unCorrectCount);
     }
 }

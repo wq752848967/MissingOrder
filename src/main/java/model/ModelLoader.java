@@ -8,11 +8,13 @@ import org.w3c.dom.NodeList;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
 
 public class ModelLoader {
     public static void main(String[] args) {
-        PetriNet net = load("/Users/wangqi/Desktop/bpmn/bxml/withLoop/loop1-1-9.xml");
+        PetriNet net = load("/Users/wangqi/Desktop/bpmn/bxml/test/test01.pnml");
+        System.out.println(net.getEndPlace().getId());
         System.out.println("pMap:");
         for(String key:net.getpMap().keySet()){
             System.out.print("id:"+net.getpMap().get(key).getId());
@@ -43,6 +45,11 @@ public class ModelLoader {
         return net;
     }
     public static PetriNet buildPetriNet(NodeList pList,Map<String,Place> pMap,Map<String,Transition> tMap){
+        HashSet<String> inputs = new HashSet<String>();
+        HashSet<String> outputs = new HashSet<String>();
+
+
+
         for (int i = 0; i <pList.getLength() ; i++) {
             Node node = pList.item(i);
             //String aId = node.getAttributes().getNamedItem("id").getNodeValue();
@@ -51,6 +58,9 @@ public class ModelLoader {
             PNode source = pMap.get(sId);
             if(source==null){
                 source = tMap.get(sId);
+                inputs.add(tId);
+            }else{
+                outputs.add(sId);
             }
             PNode target = pMap.get(tId);
             if (target==null){
@@ -59,8 +69,10 @@ public class ModelLoader {
             //System.out.println("arc: "+sId+" to "+tId);
             source.getNext().add(target);
             if(target.getPreId().length()>0){
-                int curPre = Integer.parseInt(target.getPreId().substring(1));
-                int nextPre = Integer.parseInt(source.getId().substring(1));
+//                int curPre = Integer.parseInt(target.getPreId().substring(1));
+//                int nextPre = Integer.parseInt(source.getId().substring(1));
+                int curPre = Integer.parseInt(target.getPreId().split("_")[1]);
+                int nextPre = Integer.parseInt(source.getId().split("_")[1]);
                 if(nextPre>curPre){
                     target.setPreId(source.getId());
                 }
@@ -69,11 +81,22 @@ public class ModelLoader {
             }
 
         }
-        PNode startNode = pMap.get("P0");
-        PNode endNode = pMap.get("P"+(pMap.size()-1));
+        PNode startNode = null;
+        PNode endNode = null;
+        for(String key:pMap.keySet()){
+            if(!inputs.contains(pMap.get(key).getId())){
+                startNode = pMap.get(key);
+            }
+            if(!outputs.contains(pMap.get(key).getId())){
+                endNode = pMap.get(key);
+            }
+        }
+
         PetriNet net = new PetriNet(startNode,endNode);
         net.setpMap(pMap);
         net.settMap(tMap);
+
+
         return net;
 
     }

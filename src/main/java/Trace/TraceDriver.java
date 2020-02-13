@@ -23,7 +23,13 @@ public class TraceDriver {
     public  static OpenListNode min_Context =  null;
     private static final boolean LOG_OUT = false;
     public static String testResult = "";
-
+    public static int count = 0;
+    public static void clear(){
+        minCost = Integer.MAX_VALUE;
+        min_Context =  null;
+        testResult = "";
+        count = 0;
+    }
     public static void main(String[] args) {
         //错位一个
 
@@ -85,11 +91,11 @@ public class TraceDriver {
             CharNode cNode = new CharNode();
             cNode.setIndex(i);
             cNode.setCur(trace[i]);
-            boolean[] transRecord = new boolean[trace.length];
-            openListNode.setHistory(transRecord);
             openListNode.setNode(i,cNode);
         }
         //初始化代价
+        boolean[] transRecord = new boolean[trace.length];
+        openListNode.setHistory(transRecord);
         openListNode.setCostG(0);
         int costH  = CostCalculator.calcCostH(modelOrderList,openListNode.getStrContext());
         openListNode.setCostH(costH);
@@ -254,7 +260,7 @@ public class TraceDriver {
                 System.out.print("temp min,cost: "+minNodeContext.getCostG());
                 System.out.println(" | trace: "+reuslt);
             }
-            System.out.println("temp min,cost: "+minNodeContext.getCostF()+"/"+minNodeContext.getCostG()+"/"+minNodeContext.getCostH());
+            //System.out.println("temp min,cost: "+minNodeContext.getCostF()+"/"+minNodeContext.getCostG()+"/"+minNodeContext.getCostH());
             //System.out.println(" | trace: "+reuslt);
 
 //            OpenListNode nnn = openList.getMinCostNode();
@@ -532,6 +538,9 @@ public class TraceDriver {
                 }else {
                     costHis.add(newKey);
                 }
+
+
+
 //                String traceKey = CharNodeTools.getConsoleString(modelOrder,newOpenListNode.getStrContext());
 //                if (traceHis.containsKey(traceKey)){
 //                    continue;
@@ -566,6 +575,7 @@ public class TraceDriver {
                             newOpenListNode.setCostH(newCostH);
                             //是否存在完成的排序方式
                             openList.add(newOpenListNode);
+                            count++;
                             if(LOG_OUT){
                                 String rr = CharNodeTools.getConsoleString(modelOrder,newOpenListNode.getStrContext());
                                 System.out.println(reTrans+" /end trace:"+rr);
@@ -581,6 +591,7 @@ public class TraceDriver {
                         newOpenListNode.setCostH(newCostH);
                         //是否存在完成的排序方式
                         openList.add(newOpenListNode);
+                        count++;
                         if(LOG_OUT){
                             String rr = CharNodeTools.getConsoleString(modelOrder,newOpenListNode.getStrContext());
                             System.out.println(reTrans+" /end trace:"+rr);

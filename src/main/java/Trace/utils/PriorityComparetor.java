@@ -18,8 +18,9 @@ public class PriorityComparetor {
             p1_arr = p1.split(",");
             p2_arr = p2.split(",");
         }catch (NullPointerException e){
-            System.out.println("***********:"+p1+"  "+p2);
+            //System.out.println("***********:"+p1+"  "+p2);
         }
+
         int smallPri = Math.min(p1_arr.length,p2_arr.length);
 
 

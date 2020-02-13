@@ -1,13 +1,14 @@
 package repair;
 
 import Loop.LoopUtils;
-import Trace.OnePassDriver;
 import Trace.TraceDriver;
 import Trace.pojos.CharNode;
 import Trace.pojos.OpenList;
 import Trace.pojos.OpenListNode;
 import Trace.utils.CharNodeTools;
 import model.ModelAnalysis;
+import model.ModelLoader;
+import model.ModelPriotity;
 import model.pojos.PetriNet;
 import model.pojos.Transition;
 import simulation.ModelGenerate;
@@ -18,13 +19,18 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Test_FixedLength {
+public class Test_FixedLoop {
     public static void main(String[] args) {
         //解析模型
-        int nodeCount = 301;
-        double per = 0.6;
-        PetriNet net = ModelGenerate.generateSerialModel(nodeCount);
+        int nodeCount = 11;
+        double per = 0.3;
+        PetriNet net  = ModelLoader.load("/Users/wangqi/Desktop/bpmn/test/data/temp/DG_CO.003.xml");
+        //循环检测
+        ModelAnalysis.findLoop(net);
+        //模型transition优先级标注
+        ModelPriotity.makePriority(net);
         long startTime=System.currentTimeMillis();
+
 
         /*
          * 模型信息输出
@@ -57,9 +63,10 @@ public class Test_FixedLength {
 //
 
         //trace            0     1     2    3   4     5    6    7    8
-        for (int k=0;k<10;k++){
-            String[] trace = TraceGenerate.generateSerialTrace(nodeCount);
-            trace = RandomTrace.random(per,trace);
+        for (int k=0;k<1;k++){
+            String[] trace = {"trans_1","trans_2","trans_3","trans_4","trans_5"
+            ,"trans_8","trans_2","trans_3","trans_4","trans_5","trans_7","trans_6"};
+            //trace = RandomTrace.random(per,trace);
             Map<String,Integer> traceOrder =  new HashMap<String, Integer>();
             for (int i = 0; i < trace.length; i++) {
                 traceOrder.put(trace[i],i);
@@ -113,14 +120,9 @@ public class Test_FixedLength {
                 System.out.println("_______________________________________________________");
                 System.out.println("result console cost info:"+sampleNodeContext.getCostF());
                 CharNode[] sampleNodes = sampleNodeContext.getStrContext();
-                String reuslt = CharNodeTools.getConsoleString(modelOrder,sampleNodes);
+                String reuslt = CharNodeTools.getTraceString(modelOrder,sampleNodes);
                 TraceDriver.testResult = reuslt;
-                System.out.println(TraceDriver.testResult);
-
-                System.out.print("trace: ");
-                for (String t:trace){
-                    System.out.print(t+" ");
-                }
+                System.out.println("r:"+TraceDriver.testResult);
             }else{
                 System.out.println("min context == null");
             }
@@ -130,6 +132,5 @@ public class Test_FixedLength {
         long endTime=System.currentTimeMillis();
         System.out.println("");
         System.out.println("程序运行时间： "+(endTime-startTime)+"ms");
-        System.out.println("count:"+TraceDriver.count);
     }
 }

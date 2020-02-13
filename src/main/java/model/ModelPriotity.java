@@ -1,5 +1,7 @@
 package model;
 
+import Loop.LoopUtils;
+import model.pojos.PLoop;
 import model.pojos.PNode;
 import model.pojos.PNodeType;
 import model.pojos.PetriNet;
@@ -33,8 +35,12 @@ public class ModelPriotity {
                     //分支
                     int nextSubIndex = 0;
                     for(PNode nItem:node.getNext()){
+                        if(priority.equals("-1")){
+                            priority = "0";
+                        }
                         mergePriority(net,nItem,priority,nextSubIndex);
                         nextSubIndex++;
+
                     }
                 }
             }
@@ -168,13 +174,14 @@ public class ModelPriotity {
             return Math.max(Integer.parseInt(originPri),Integer.parseInt(replaceOri))+"";
         }
         String resOri = ",";
-        while(originPri.length()!=replaceOri.length()){
+        while(!lengthEqual(originPri,replaceOri)){
             if(originPri.length()>replaceOri.length()){
                 originPri = originPri.substring(0,originPri.lastIndexOf(","));
             }else{
                 replaceOri = replaceOri.substring(0,replaceOri.lastIndexOf(","));
             }
         }
+        //System.out.println("eq:"+originPri+" "+replaceOri+" "+lengthEqual(originPri,replaceOri));
         if(!originPri.equals(replaceOri)){
             if((!originPri.contains(","))||(!replaceOri.contains(","))){
                 return Math.max(Integer.parseInt(originPri),Integer.parseInt(replaceOri))+"";
@@ -185,7 +192,13 @@ public class ModelPriotity {
         String subOri = originPri.split(",")[originPri.split(",").length-1];
         String subReplace = replaceOri.split(",")[replaceOri.split(",").length-1];
         //System.out.println("sub ori:"+subOri+"  "+subReplace);
+        if((!subOri.contains(","))&&(!subReplace.contains(","))){
+            if(PriorityComparetor.compare("","",originPri,replaceOri)<0){
+                return replaceOri;
 
+            }
+        }
+        //System.out.println(originPri+"  "+replaceOri);
         while(!subOri.equals(subReplace)){
             originPri = originPri.substring(0,originPri.lastIndexOf(","));
             replaceOri = replaceOri.substring(0,replaceOri.lastIndexOf(","));
@@ -216,12 +229,23 @@ public class ModelPriotity {
     }
 
 
-
+    public static boolean lengthEqual(String o1,String o2){
+        int o1Count = o1.split(",").length;
+        int o2Count = o2.split(",").length;
+        if(o1Count==o2Count){
+            return true;
+        }else{
+            return false;
+        }
+    }
 
     public static void main(String[] args) {
-        PetriNet net = ModelLoader.load("/Users/wangqi/Desktop/bpmn/bxml/withoutLoop/test3-25.xml");
+        PetriNet net = ModelLoader.load("/Users/wangqi/Desktop/bpmn/test/data/temp/DG_CO_001.xml");
         //System.out.println(net.getpMap().get("P0").getNext().get(0));
         ModelAnalysis.findLoop(net);
+        for(PLoop pl:net.getLoops()){
+            System.out.println(pl.getStart()+"  "+pl.getEnd());
+        }
         makePriority(net);
         for(String key:net.gettMap().keySet()){
             System.out.print("id:"+net.gettMap().get(key).getId());

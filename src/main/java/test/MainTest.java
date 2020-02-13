@@ -35,16 +35,7 @@ public class MainTest {
     }
 
     public static void main(String[] args) {
-        LinkedList<String> link = new LinkedList<String>();
-        link.add("0");
-        link.add("1");
-        link.add("2");
-        link.add("3");
-        link.add("4");
-        link.add(0,"x");
-
-        for(String s:link){
-            System.out.println(s);
-        }
+       String s = "task2.seq";
+        System.out.println(s.substring(0,s.length()-4));
     }
 }
