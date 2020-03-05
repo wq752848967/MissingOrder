@@ -69,10 +69,10 @@ public class ModelLoader {
             //System.out.println("arc: "+sId+" to "+tId);
             source.getNext().add(target);
             if(target.getPreId().length()>0){
-//                int curPre = Integer.parseInt(target.getPreId().substring(1));
-//                int nextPre = Integer.parseInt(source.getId().substring(1));
-                int curPre = Integer.parseInt(target.getPreId().split("_")[1]);
-                int nextPre = Integer.parseInt(source.getId().split("_")[1]);
+                int curPre = Integer.parseInt(target.getPreId().substring(1));
+                int nextPre = Integer.parseInt(source.getId().substring(1));
+                //int curPre = Integer.parseInt(target.getPreId().split("_")[1]);
+                //int nextPre = Integer.parseInt(source.getId().split("_")[1]);
                 if(nextPre>curPre){
                     target.setPreId(source.getId());
                 }

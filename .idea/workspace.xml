@@ -2,39 +2,40 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5ab6df0b-13a8-4940-a2f7-a77f7a042d7b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Tools/SequenceFormat.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Tools/SequenceRequir.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Trace/SplitDriver.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Trace/parallel/DriverTask.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Trace/parallel/PTraceDriver.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/repair/RealDataTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/repair/SplitRepair.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/repair/Test_FixedLoop.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/repair/Test_ParallelFixed.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/repair/Test_compare_Deeky.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Tools/LCS.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Tools/NmlToXml.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Tools/StringToXes.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/de/normalisiert/utils/graphs/AdjacencyList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/de/normalisiert/utils/graphs/ElementaryCyclesSearch.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/de/normalisiert/utils/graphs/SCCResult.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/de/normalisiert/utils/graphs/StrongConnectedComponents.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/nust/heroine/basicstruct/Arc.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/nust/heroine/basicstruct/Graph.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/nust/heroine/basicstruct/MyPetriNet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/nust/heroine/basicstruct/Node.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/nust/heroine/basicstruct/NodePrintType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/nust/heroine/basicstruct/Place.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/nust/heroine/basicstruct/Trace.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/nust/heroine/basicstruct/Transition.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/nust/heroine/recovery/Recovery.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Loop/LoopUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Loop/LoopUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Trace/OnePassDriver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Trace/OnePassDriver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Trace/TraceDriver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Trace/TraceDriver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Trace/utils/CharNodeTools.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Trace/utils/CharNodeTools.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Trace/utils/PriorityComparetor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Trace/utils/PriorityComparetor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/ModelAnalysis.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/ModelAnalysis.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/ModelLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/ModelLoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/ModelPriotity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/ModelPriotity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/repair/OnePass_Repair.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/repair/OnePass_Repair.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/repair/SplitRepair.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/repair/SplitRepair.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/repair/Test_FixedLength.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/repair/Test_FixedLength.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/repair/Test_compare.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/repair/Test_compare.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/repair/Test_compare_Deeky.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/repair/Test_compare_Deeky.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/test/MainTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/test/MainTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Loop/LoopUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Loop/LoopUtils.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Trace/OnePassDriver.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Trace/OnePassDriver.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Trace/TraceDriver.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Trace/TraceDriver.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Trace/utils/CharNodeTools$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Trace/utils/CharNodeTools$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Trace/utils/CharNodeTools$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Trace/utils/CharNodeTools$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Trace/utils/CharNodeTools.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Trace/utils/CharNodeTools.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Trace/utils/PriorityComparetor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Trace/utils/PriorityComparetor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/ModelAnalysis.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/ModelAnalysis.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/model/ModelLoader.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/ModelLoader.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/ModelPriotity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/ModelPriotity.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/repair/OnePass_Repair.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/repair/OnePass_Repair.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/repair/SplitRepair.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/repair/SplitRepair.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/repair/Test_FixedLength.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/repair/Test_FixedLength.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/repair/Test_compare.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/repair/Test_compare.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/repair/Test_compare_Deeky.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/repair/Test_compare_Deeky.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/test/MainTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/test/MainTest.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -45,42 +46,53 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/MissingOrderBuilder$test.ic" NAME="test Coverage Results" MODIFIED="1582687649186" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>org.nust.heroine.*</FILTER>
+    </SUITE>
+  </component>
   <component name="FUSProjectUsageTrigger">
     <session id="365428142">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="6" />
+          <entry key="project.closed" value="10" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.11" value="2" />
+          <entry key="project.open.time.14" value="1" />
           <entry key="project.open.time.15" value="1" />
+          <entry key="project.open.time.19" value="1" />
+          <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.5" value="1" />
+          <entry key="project.open.time.7" value="1" />
           <entry key="project.open.time.8" value="1" />
-          <entry key="project.opened" value="7" />
+          <entry key="project.opened" value="11" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="211" />
+          <entry key="class" value="14" />
+          <entry key="java" value="284" />
           <entry key="txt" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="211" />
+          <entry key="CLASS" value="14" />
+          <entry key="JAVA" value="284" />
           <entry key="PLAIN_TEXT" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="15" />
-          <entry key="java" value="50017" />
+          <entry key="java" value="54535" />
           <entry key="txt" value="36" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="50017" />
+          <entry key="JAVA" value="54535" />
           <entry key="PLAIN_TEXT" value="51" />
         </counts>
       </usages-collector>
@@ -92,31 +104,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/repair/RealDataTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="59">
-              <caret line="18" column="21" lean-forward="true" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Trace/utils/PriorityComparetor.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="140">
-              <caret line="13" column="13" lean-forward="true" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/repair/Test_FixedLength.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="112">
-              <caret line="24" column="25" lean-forward="true" selection-start-line="23" selection-start-column="7" selection-end-line="24" selection-end-column="25" />
+            <state relative-caret-position="1056">
+              <caret line="44" selection-start-line="44" selection-end-line="44" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -125,22 +116,76 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/repair/OnePass_Repair.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/repair/A_RepairDriver.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="67" column="68" lean-forward="true" selection-start-line="65" selection-start-column="8" selection-end-line="67" selection-end-column="68" />
+            <state relative-caret-position="264">
+              <caret line="27" column="40" selection-start-line="23" selection-start-column="8" selection-end-line="27" selection-end-column="40" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/repair/SplitRepair.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="7656">
+              <caret line="319" column="21" selection-start-line="319" selection-start-column="21" selection-end-line="319" selection-end-column="21" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Trace/pojos/CharNode.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="96">
+              <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Trace/pojos/OpenList.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="96">
+              <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Trace/pojos/OpenListNode.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="48">
+              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/repair/SplitRepair.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Trace/utils/CostCalculator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="115">
-              <caret line="313" column="25" selection-start-line="313" selection-start-column="25" selection-end-line="313" selection-end-column="25" />
+            <state relative-caret-position="-491">
+              <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/model/ModelAnalysis.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2496">
+              <caret line="110" column="83" selection-start-line="110" selection-start-column="78" selection-end-line="110" selection-end-column="83" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Loop/LoopUtils.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="960">
+              <caret line="40" selection-start-line="40" selection-end-line="40" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -149,10 +194,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Tools/SequenceRequir.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Trace/TraceDriver.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="709">
-              <caret line="129" column="2" lean-forward="true" selection-start-line="132" selection-start-column="2" selection-end-line="134" selection-end-column="19" />
+            <state relative-caret-position="552">
+              <caret line="23" column="48" selection-start-line="23" selection-start-column="48" selection-end-line="23" selection-end-column="48" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -172,26 +217,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>***</find>
-      <find>newCostH == 0</find>
-      <find>1</find>
-      <find>&quot;1&quot;</find>
-      <find>reTrans</find>
-      <find>9:[T2-1]</find>
-      <find>return false:</find>
-      <find>T6-2</find>
-      <find>**</find>
-      <find>while</find>
-      <find>/end</find>
-      <find>init</find>
-      <find>Greedy</find>
-      <find>Exception</find>
-      <find>historyFlag</find>
-      <find>originTraceList</find>
-      <find>initOpenList</find>
-      <find>getAllTransition</find>
-      <find>costHis</find>
-      <find>main</find>
       <find>result console cost</find>
       <find>openList.add</find>
       <find>dfsLoop</find>
@@ -202,6 +227,26 @@
       <find>mod</find>
       <find>mod:</find>
       <find>result time</find>
+      <find>openList</find>
+      <find>pre</find>
+      <find>rTrace</find>
+      <find>next</find>
+      <find>arc</find>
+      <find>nodes</find>
+      <find>comp</find>
+      <find>hashC</find>
+      <find>cyc</find>
+      <find>hasCycle</find>
+      <find>transMap</find>
+      <find>transitions</find>
+      <find>sr_plus</find>
+      <find>isHasIntersection</find>
+      <find>quot</find>
+      <find>pr</find>
+      <find>k</find>
+      <find>backs</find>
+      <find>com</find>
+      <find>System</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -210,24 +255,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/parallel/ParallelDriver.java" />
-        <option value="$PROJECT_DIR$/src/main/java/parallel/pojos/OpenListNode.java" />
-        <option value="$PROJECT_DIR$/src/main/java/parallel/pojos/CharNode.java" />
-        <option value="$PROJECT_DIR$/src/main/java/parallel/utils/SortNode.java" />
-        <option value="$PROJECT_DIR$/src/main/java/parallel/pojos/OpenList.java" />
-        <option value="$PROJECT_DIR$/src/main/java/parallel/utils/CharNodeTools.java" />
-        <option value="$PROJECT_DIR$/src/main/java/parallel/utils/CostCalculator.java" />
-        <option value="$PROJECT_DIR$/src/main/java/parallel/TraceDriver.java" />
-        <option value="$PROJECT_DIR$/src/main/java/model/pojos/PlaceType.java" />
-        <option value="$PROJECT_DIR$/src/main/java/model/pojos/PNodeType.java" />
-        <option value="$PROJECT_DIR$/src/main/java/model/pojos/Place.java" />
-        <option value="$PROJECT_DIR$/src/main/java/parallel/utils/PriorityComparetor.java" />
-        <option value="$PROJECT_DIR$/src/main/java/model/pojos/PNode.java" />
-        <option value="$PROJECT_DIR$/src/main/java/model/pojos/Transition.java" />
-        <option value="$PROJECT_DIR$/src/main/java/problems.txt" />
-        <option value="$PROJECT_DIR$/src/main/java/model/pojos/PLoop.java" />
-        <option value="$PROJECT_DIR$/src/main/java/model/pojos/PetriNet.java" />
         <option value="$PROJECT_DIR$/src/main/java/Loop/utils/PermutationUtil.java" />
         <option value="$PROJECT_DIR$/src/main/java/Trace/utils/CostCalculator.java" />
         <option value="$PROJECT_DIR$/src/main/java/Loop/tests/LoopUtilsTest.java" />
@@ -242,25 +269,43 @@
         <option value="$PROJECT_DIR$/src/main/java/repair/Test_ParallelFixed.java" />
         <option value="$PROJECT_DIR$/src/main/java/Trace/parallel/PTraceDriver.java" />
         <option value="$PROJECT_DIR$/src/main/java/Trace/SplitDriver.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Trace/OnePassDriver.java" />
         <option value="$PROJECT_DIR$/src/main/java/repair/Test_compare.java" />
-        <option value="$PROJECT_DIR$/src/main/java/repair/Test_compare_Deeky.java" />
-        <option value="$PROJECT_DIR$/src/main/java/model/ModelAnalysis.java" />
-        <option value="$PROJECT_DIR$/src/main/java/model/ModelLoader.java" />
         <option value="$PROJECT_DIR$/src/main/java/model/ModelPriotity.java" />
         <option value="$PROJECT_DIR$/src/main/java/Trace/utils/CharNodeTools.java" />
         <option value="$PROJECT_DIR$/src/main/java/Tools/SequenceFormat.java" />
         <option value="$PROJECT_DIR$/src/main/java/repair/Test_FixedLoop.java" />
         <option value="$PROJECT_DIR$/src/main/java/repair/RealDataRepair.java" />
-        <option value="$PROJECT_DIR$/src/main/java/test/MainTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Trace/TraceDriver.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Loop/LoopUtils.java" />
         <option value="$PROJECT_DIR$/src/main/java/Trace/utils/PriorityComparetor.java" />
         <option value="$PROJECT_DIR$/src/main/java/Tools/SequenceRequir.java" />
         <option value="$PROJECT_DIR$/src/main/java/repair/RealDataTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/repair/Test_FixedLength.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Trace/OnePassDriver.java" />
+        <option value="$PROJECT_DIR$/src/main/java/repair/Test_compare_Deeky.java" />
+        <option value="$PROJECT_DIR$/src/main/java/test/MainTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/nust/heroine/recovery/recovery.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/nust/heroine/basicstruct/NodePrintType.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/nust/heroine/basicstruct/Transition.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/nust/heroine/basicstruct/Trace.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/nust/heroine/basicstruct/Place.java" />
+        <option value="$PROJECT_DIR$/src/main/java/de/normalisiert/utils/graphs/ElementaryCyclesSearch.java" />
+        <option value="$PROJECT_DIR$/src/main/java/de/normalisiert/utils/graphs/SCCResult.java" />
+        <option value="$PROJECT_DIR$/src/main/java/de/normalisiert/utils/graphs/AdjacencyList.java" />
+        <option value="$PROJECT_DIR$/src/main/java/de/normalisiert/utils/graphs/StrongConnectedComponents.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/nust/heroine/basicstruct/Graph.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/nust/heroine/basicstruct/Arc.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/nust/heroine/basicstruct/Node.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/nust/heroine/basicstruct/MyPetriNet.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/nust/heroine/recovery/Recovery.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/nust/heroine/test.java" />
         <option value="$PROJECT_DIR$/src/main/java/repair/OnePass_Repair.java" />
         <option value="$PROJECT_DIR$/src/main/java/repair/SplitRepair.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Tools/NmlToXml.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Tools/StringToXes.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Tools/LCS.java" />
+        <option value="$PROJECT_DIR$/src/main/java/model/ModelLoader.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Trace/TraceDriver.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Loop/LoopUtils.java" />
+        <option value="$PROJECT_DIR$/src/main/java/model/ModelAnalysis.java" />
+        <option value="$PROJECT_DIR$/src/main/java/repair/Test_FixedLength.java" />
       </list>
     </option>
   </component>
@@ -275,7 +320,8 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
+  <component name="ProjectFrameBounds" fullScreen="true">
+    <option name="x" value="-1440" />
     <option name="width" value="1440" />
     <option name="height" value="900" />
   </component>
@@ -316,38 +362,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MissingOrderBuilder" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MissingOrderBuilder" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="repair" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MissingOrderBuilder" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MissingOrderBuilder" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="simulation" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MissingOrderBuilder" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MissingOrderBuilder" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MissingOrderBuilder" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MissingOrderBuilder" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="Tools" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -380,8 +394,8 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -402,9 +416,23 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.OnePass_Repair">
+  <component name="RunManager" selected="Application.Test_FixedLength">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="NmlToXml" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Tools.NmlToXml" />
+      <module name="MissingOrderBuilder" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Tools.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -423,8 +451,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RealDataTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="repair.RealDataTest" />
+    <configuration name="SplitRepair" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="repair.SplitRepair" />
       <module name="MissingOrderBuilder" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
@@ -437,8 +465,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SequenceRequir" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Tools.SequenceRequir" />
+    <configuration name="StringToXes" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Tools.StringToXes" />
       <module name="MissingOrderBuilder" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
@@ -458,20 +486,6 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="repair.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TraceDriver" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Trace.TraceDriver" />
-      <module name="MissingOrderBuilder" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Trace.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -509,19 +523,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.SequenceRequir" />
-      <item itemvalue="Application.RealDataTest" />
-      <item itemvalue="Application.TraceDriver" />
-      <item itemvalue="Application.Test_FixedLength" />
+      <item itemvalue="Application.NmlToXml" />
+      <item itemvalue="Application.StringToXes" />
       <item itemvalue="Application.OnePass_Repair" />
+      <item itemvalue="Application.Test_FixedLength" />
+      <item itemvalue="Application.SplitRepair" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.OnePass_Repair" />
         <item itemvalue="Application.Test_FixedLength" />
-        <item itemvalue="Application.RealDataTest" />
-        <item itemvalue="Application.SequenceRequir" />
-        <item itemvalue="Application.TraceDriver" />
+        <item itemvalue="Application.SplitRepair" />
+        <item itemvalue="Application.StringToXes" />
+        <item itemvalue="Application.NmlToXml" />
+        <item itemvalue="Application.OnePass_Repair" />
       </list>
     </recent_temporary>
   </component>
@@ -556,18 +570,19 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1440" height="900" extended-state="6" />
+    <frame x="-1440" y="0" width="1440" height="900" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.278098" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.30619597" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" weight="0.3299712" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4985591" visible="true" weight="0.34526855" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4985591" weight="0.3196931" />
       <window_info anchor="bottom" id="Cvs" order="3" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="4" weight="0.4" />
-      <window_info anchor="bottom" id="Debug" order="5" weight="0.47570333" />
+      <window_info anchor="bottom" id="Debug" order="5" weight="0.40153453" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32992327" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.32992327" />
@@ -578,6 +593,7 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info anchor="right" id="Maven Projects" order="4" weight="0.32994652" />
+      <window_info anchor="right" id="Coverage" order="5" side_tool="true" weight="0.3299712" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -598,6 +614,36 @@
           <properties />
           <option name="timeStamp" value="14" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/nust/heroine/basicstruct/MyPetriNet.java</url>
+          <line>320</line>
+          <properties />
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/nust/heroine/recovery/Recovery.java</url>
+          <line>313</line>
+          <properties />
+          <option name="timeStamp" value="26" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Loop/LoopUtils.java</url>
+          <line>72</line>
+          <properties />
+          <option name="timeStamp" value="27" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Loop/LoopUtils.java</url>
+          <line>64</line>
+          <properties />
+          <option name="timeStamp" value="29" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Loop/LoopUtils.java</url>
+          <line>40</line>
+          <properties />
+          <option name="timeStamp" value="30" />
+        </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
@@ -605,344 +651,10 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Model.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/model/pojos.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/model/pojos/PlaceType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
-          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/model/pojos/PNodeType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="3" column="20" selection-start-line="3" selection-start-column="20" selection-end-line="3" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/model/pojos/Place.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="24">
-          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/model/pojos/Transition.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="3" column="38" selection-start-line="3" selection-start-column="38" selection-end-line="3" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/problems.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="27" lean-forward="true" selection-start-column="27" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/model/pojos/PLoop.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="21" selection-start-line="21" selection-end-line="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Loop/utils/PermutationUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="24">
-          <caret line="12" column="19" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/model/pojos/PNode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Loop/tests/LoopUtilsTest.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/model/pojos/PetriNet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/simulation/TraceGenerate.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="3" column="27" selection-start-line="3" selection-start-column="27" selection-end-line="3" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/simulation/ModelGenerate.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="11" column="27" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/simulation/RandomTrace.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="14" column="13" lean-forward="true" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Trace/parallel.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/Trace/parallel/PTraceDriver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="23" column="37" selection-start-line="23" selection-start-column="37" selection-end-line="23" selection-end-column="37" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Trace/parallel/DriverTask.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="44" column="14" selection-start-line="44" selection-start-column="14" selection-end-line="44" selection-end-column="14" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#926#934#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Trace/SplitDriver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-8713">
-          <caret line="23" column="8" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="8" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/repair/Test_ParallelFixed.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
-          <caret line="29" column="46" lean-forward="true" selection-start-line="28" selection-start-column="8" selection-end-line="29" selection-end-column="46" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Trace/OnePassDriver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="366" column="13" lean-forward="true" selection-start-line="366" selection-start-column="13" selection-end-line="366" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#14428#14442#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/repair/Test_compare.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="82" column="39" lean-forward="true" selection-start-line="82" selection-start-column="39" selection-end-line="82" selection-end-column="39" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/repair/Test_compare_Deeky.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="24" column="24" selection-start-line="24" selection-start-column="24" selection-end-line="24" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1133#1150#0" expanded="true" />
-            <element signature="e#1341#1377#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/repair/A_RepairDriver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="376">
-          <caret line="84" column="13" lean-forward="true" selection-start-line="78" selection-start-column="12" selection-end-line="84" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Tools/SequenceFormat.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="57" column="6" lean-forward="true" selection-start-line="57" selection-start-column="6" selection-end-line="57" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/test/MainTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="421">
-          <caret line="34" column="5" lean-forward="true" selection-start-line="34" selection-start-column="5" selection-end-line="34" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/repair/Test_FixedLoop.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="133" column="64" lean-forward="true" selection-start-line="131" selection-start-column="8" selection-end-line="133" selection-end-column="64" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Trace/TraceDriver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="18" column="3" lean-forward="true" selection-start-line="18" selection-start-column="3" selection-end-line="18" selection-end-column="3" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Trace/pojos/OpenListNode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="6" column="22" lean-forward="true" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
-          <folding>
-            <element signature="e#610#611#0" expanded="true" />
-            <element signature="e#649#650#0" expanded="true" />
-            <element signature="e#710#711#0" expanded="true" />
-            <element signature="e#766#767#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Trace/pojos/OpenList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="49" column="29" lean-forward="true" selection-start-line="49" selection-start-column="29" selection-end-line="49" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1502#1503#0" expanded="true" />
-            <element signature="e#1534#1535#0" expanded="true" />
-            <element signature="e#1557#1558#0" expanded="true" />
-            <element signature="e#1595#1596#0" expanded="true" />
-            <element signature="e#1635#1636#0" expanded="true" />
-            <element signature="e#1669#1670#0" expanded="true" />
-            <element signature="e#1740#1741#0" expanded="true" />
-            <element signature="e#1787#1788#0" expanded="true" />
-            <element signature="e#1825#1826#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Trace/pojos/CharNode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Trace/utils/CharNodeTools.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="97" column="9" lean-forward="true" selection-start-line="97" selection-start-column="9" selection-end-line="97" selection-end-column="9" />
-          <folding>
-            <element signature="e#387#397#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Trace/utils/CostCalculator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="244">
-          <caret line="29" column="11" lean-forward="true" selection-start-line="29" selection-start-column="11" selection-end-line="29" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Trace/utils/SortNode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="9" column="5" lean-forward="true" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
-          <folding>
-            <element signature="e#256#257#0" expanded="true" />
-            <element signature="e#287#288#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/model/ModelAnalysis.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="117">
-          <caret line="66" column="14" selection-start-line="66" selection-start-column="14" selection-end-line="66" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/model/ModelPriotity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="130" column="9" lean-forward="true" selection-start-line="130" selection-start-column="9" selection-end-line="130" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#269#270#0" expanded="true" />
-            <element signature="e#331#332#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/model/ModelLoader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="73" selection-start-line="73" selection-end-line="73" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Loop/LoopUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="118">
-          <caret line="166" column="13" selection-start-line="166" selection-start-column="13" selection-end-line="166" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Trace/utils/PriorityComparetor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="13" column="13" lean-forward="true" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/repair/RealDataTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="59">
           <caret line="18" column="21" lean-forward="true" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -956,33 +668,366 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/repair/Test_FixedLength.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/Trace/OnePassDriver.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="24" column="25" lean-forward="true" selection-start-line="23" selection-start-column="7" selection-end-line="24" selection-end-column="25" />
+        <state relative-caret-position="195">
+          <caret line="395" column="18" selection-start-line="395" selection-start-column="18" selection-end-line="395" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/repair/Test_compare_Deeky.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="163">
+          <caret line="27" column="31" lean-forward="true" selection-start-line="27" selection-start-column="31" selection-end-line="27" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/test/MainTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="37" column="23" lean-forward="true" selection-start-line="37" selection-start-column="23" selection-end-line="37" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Tools/SequenceFormat.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="524">
+          <caret line="69" column="17" lean-forward="true" selection-start-line="53" selection-start-column="16" selection-end-line="69" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/repair/Test_FixedLoop.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="132" column="31" selection-start-line="131" selection-start-column="8" selection-end-line="133" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/simulation/RandomTrace.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/bpmn/Effa/jar/org/nust/heroine/recovery/Recovery.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="15" column="23" lean-forward="true" selection-end-line="463" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/bpmn/Effa/jar/org/nust/heroine/basicstruct/MyPetriNet.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="15" column="31" selection-end-line="443" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/bpmn/Effa/jar/org/nust/heroine/basicstruct/Node.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="21" column="26" lean-forward="true" selection-end-line="270" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/bpmn/Effa/jar/org/nust/heroine/basicstruct/NodePrintType.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="7" column="25" selection-end-line="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/nust/heroine/basicstruct/NodePrintType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="384">
+          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/bpmn/Effa/jar/org/nust/heroine/basicstruct/Transition.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="291">
+          <caret line="26" column="21" lean-forward="true" selection-end-line="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/nust/heroine/basicstruct/Transition.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-299">
+          <caret line="7" column="7" lean-forward="true" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/bpmn/Effa/jar/org/nust/heroine/basicstruct/Trace.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="17" column="27" lean-forward="true" selection-end-line="84" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/bpmn/Effa/jar/org/nust/heroine/basicstruct/Place.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="15" column="18" selection-end-line="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/nust/heroine/basicstruct/Place.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="589">
+          <caret line="50" lean-forward="true" selection-start-line="50" selection-end-line="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/bpmn/Effa/jar/org/nust/heroine/basicstruct/Arc.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="11" column="16" selection-end-line="195" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/bpmn/Effa/jar/org/nust/heroine/basicstruct/Graph.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="13" column="21" lean-forward="true" selection-end-line="163" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/bpmn/Effa/jar/de/normalisiert/utils/graphs/ElementaryCyclesSearch.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="15" column="30" lean-forward="true" selection-end-line="107" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/bpmn/Effa/jar/de/normalisiert/utils/graphs/TestCycles.class">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/bpmn/Effa/jar/de/normalisiert/utils/graphs/StrongConnectedComponents.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="13" column="32" lean-forward="true" selection-end-line="204" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/bpmn/Effa/jar/de/normalisiert/utils/graphs/SCCResult.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="12" column="35" lean-forward="true" selection-end-line="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/bpmn/Effa/jar/de/normalisiert/utils/graphs/AdjacencyList.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="10" column="26" lean-forward="true" selection-end-line="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/de/normalisiert/utils/graphs/AdjacencyList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="589">
+          <caret line="37" lean-forward="true" selection-start-line="37" selection-end-line="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/de/normalisiert/utils/graphs/StrongConnectedComponents.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1875">
+          <caret line="142" column="11" selection-start-line="142" selection-start-column="11" selection-end-line="142" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/de/normalisiert/utils/graphs/SCCResult.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="685">
+          <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/de/normalisiert/utils/graphs/ElementaryCyclesSearch.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="232">
+          <caret line="24" column="24" selection-start-line="24" selection-start-column="24" selection-end-line="24" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/nust/heroine/basicstruct/Arc.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="409">
+          <caret line="177" column="4" selection-start-line="177" selection-start-column="4" selection-end-line="177" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/nust/heroine/basicstruct/MyPetriNet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6216">
+          <caret line="281" column="30" selection-start-line="281" selection-start-column="25" selection-end-line="281" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1011#1012#0" expanded="true" />
+            <element signature="e#1043#1044#0" expanded="true" />
+            <element signature="e#1507#1508#0" expanded="true" />
+            <element signature="e#1546#1547#0" expanded="true" />
+            <element signature="e#2302#2303#0" expanded="true" />
+            <element signature="e#2338#2339#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/nust/heroine/test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1512">
+          <caret line="76" column="43" selection-start-line="76" selection-start-column="43" selection-end-line="76" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/nust/heroine/basicstruct/Node.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="912">
+          <caret line="53" column="11" selection-start-line="53" selection-start-column="11" selection-end-line="53" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/nust/heroine/basicstruct/Graph.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1800">
+          <caret line="104" selection-start-line="104" selection-end-line="104" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/nust/heroine/recovery/Recovery.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5448">
+          <caret line="236" selection-start-line="236" selection-end-line="236" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/nust/heroine/basicstruct/Trace.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/repair/OnePass_Repair.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="67" column="68" lean-forward="true" selection-start-line="65" selection-start-column="8" selection-end-line="67" selection-end-column="68" />
+        <state relative-caret-position="240">
+          <caret line="66" column="24" selection-start-line="66" selection-start-column="24" selection-end-line="66" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Tools/LCS.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Tools/NmlToXml.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="61" column="51" lean-forward="true" selection-start-line="61" selection-start-column="51" selection-end-line="61" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/model/ModelLoader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="72" column="16" selection-start-line="72" selection-start-column="16" selection-end-line="72" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Tools/StringToXes.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="267">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/repair/Test_FixedLength.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1056">
+          <caret line="44" selection-start-line="44" selection-end-line="44" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/repair/A_RepairDriver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="27" column="40" selection-start-line="23" selection-start-column="8" selection-end-line="27" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/repair/SplitRepair.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="313" column="25" selection-start-line="313" selection-start-column="25" selection-end-line="313" selection-end-column="25" />
+        <state relative-caret-position="7656">
+          <caret line="319" column="21" selection-start-line="319" selection-start-column="21" selection-end-line="319" selection-end-column="21" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Trace/pojos/CharNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Trace/pojos/OpenList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/model/ModelAnalysis.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2496">
+          <caret line="110" column="83" selection-start-line="110" selection-start-column="78" selection-end-line="110" selection-end-column="83" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Loop/LoopUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="960">
+          <caret line="40" selection-start-line="40" selection-end-line="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Trace/TraceDriver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="552">
+          <caret line="23" column="48" selection-start-line="23" selection-start-column="48" selection-end-line="23" selection-end-column="48" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Trace/pojos/OpenListNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Trace/utils/CostCalculator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-491">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
         </state>
       </provider>
     </entry>

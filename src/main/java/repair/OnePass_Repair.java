@@ -63,11 +63,12 @@ public class OnePass_Repair {
 //
 //        //trace            0     1     2    3   4     5    6    7    8
 //        String[] trace = {"T9","T10","T0","T1","T2","T3","T8","T4","T6"};
-        int nodeCount = 10;
-        double per = 0.4;
+        int nodeCount = 35;
+        double per = 0.3;
+        int tanCount = 1;
         PetriNet net = ModelGenerate.generateSerialModel(nodeCount);
         long startTime=System.currentTimeMillis();
-        for (int k = 0; k < 10; k++) {
+        for (int k = 0; k < 100; k++) {
 
             String[] trace = TraceGenerate.generateSerialTrace(nodeCount);
             trace = RandomTrace.random(per,trace);
@@ -106,7 +107,7 @@ public class OnePass_Repair {
                 //调用：
                 OpenListNode openListNode = TraceDriver.initOpenList(trace,modelOrderList,-1);
                 openList.add(openListNode);
-                OnePassDriver.repair(6,null,openList,modelOrderList,modelOrder,trace, traceOrder);
+                OnePassDriver.repair(tanCount,null,openList,modelOrderList,modelOrder,trace, traceOrder);
             }
             if(OnePassDriver.min_Context!=null){
                 OpenListNode sampleNodeContext = OnePassDriver.min_Context;

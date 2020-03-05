@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<pnml>
+<net id="workflownet" type="http://www.informatik.hu-berlin.de/top/pnml/basicPNML.rng">
+    <place id="place_0">
+        <graphics>
+            <position x="149" y="18" />
+            <dimension x="38" y="17" />
+        </graphics>
+        <name>
+            <text>place2</text>
+         </name>
+    </place>
+    <place id="place_1">
+        <graphics>
+            <position x="29" y="18" />
+            <dimension x="38" y="17" />
+        </graphics>
+        <name>
+            <text>place1</text>
+         </name>
+    </place>
+    <place id="place_2">
+        <graphics>
+            <position x="269" y="18" />
+            <dimension x="38" y="17" />
+        </graphics>
+        <name>
+            <text>place0</text>
+         </name>
+    </place>
+    <transition id="trans_0">
+        <graphics>
+            <position  x="89" y="18" />
+            <dimension x="36" y="17" />
+        </graphics>
+        <name>
+            <text>task1</text>
+         </name>
+        <toolspecific tool="ProM" version="5.2">
+            <logevent>
+                <name>ASSET FISCAL YEAR CHANGE</name>
+                <type>auto</type>
+            </logevent>
+        </toolspecific>
+    </transition>
+    <transition id="trans_1">
+        <graphics>
+            <position  x="209" y="18" />
+            <dimension x="36" y="17" />
+        </graphics>
+        <name>
+            <text>task0</text>
+         </name>
+        <toolspecific tool="ProM" version="5.2">
+            <logevent>
+                <name>THE END OF SETTLEMENT ASSETS</name>
+                <type>auto</type>
+            </logevent>
+        </toolspecific>
+    </transition>
+    <arc id="arc_0" source="trans_1" target="place_2">
+        <toolspecific tool="ProM" version="5.2">
+            <spline>
+                <point x="227" y="18" />
+                <point x="232" y="18" />
+                <point x="238" y="18" />
+                <point x="244" y="18" />
+                <end x="249" y="18" />
+            </spline>
+        </toolspecific>
+    </arc>
+    <arc id="arc_1" source="trans_0" target="place_0">
+        <toolspecific tool="ProM" version="5.2">
+            <spline>
+                <point x="107" y="18" />
+                <point x="112" y="18" />
+                <point x="118" y="18" />
+                <point x="124" y="18" />
+                <end x="129" y="18" />
+            </spline>
+        </toolspecific>
+    </arc>
+    <arc id="arc_2" source="place_1" target="trans_0">
+        <toolspecific tool="ProM" version="5.2">
+            <spline>
+                <point x="49" y="18" />
+                <point x="54" y="18" />
+                <point x="60" y="18" />
+                <point x="66" y="18" />
+                <end x="71" y="18" />
+            </spline>
+        </toolspecific>
+    </arc>
+    <arc id="arc_3" source="place_0" target="trans_1">
+        <toolspecific tool="ProM" version="5.2">
+            <spline>
+                <point x="169" y="18" />
+                <point x="174" y="18" />
+                <point x="180" y="18" />
+                <point x="186" y="18" />
+                <end x="191" y="18" />
+            </spline>
+        </toolspecific>
+    </arc>
+</net>
+</pnml>

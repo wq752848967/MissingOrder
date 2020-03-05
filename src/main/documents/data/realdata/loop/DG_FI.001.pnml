@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<pnml>
+<net id="workflownet" type="http://www.informatik.hu-berlin.de/top/pnml/basicPNML.rng">
+    <place id="place_0">
+        <graphics>
+            <position x="149" y="38" />
+            <dimension x="38" y="17" />
+        </graphics>
+        <name>
+            <text>place3</text>
+         </name>
+    </place>
+    <place id="place_1">
+        <graphics>
+            <position x="389" y="56" />
+            <dimension x="38" y="17" />
+        </graphics>
+        <name>
+            <text>place2</text>
+         </name>
+    </place>
+    <place id="place_2">
+        <graphics>
+            <position x="29" y="38" />
+            <dimension x="38" y="17" />
+        </graphics>
+        <name>
+            <text>place1</text>
+         </name>
+    </place>
+    <place id="place_3">
+        <graphics>
+            <position x="269" y="56" />
+            <dimension x="38" y="17" />
+        </graphics>
+        <name>
+            <text>place0</text>
+         </name>
+    </place>
+    <transition id="trans_0">
+        <graphics>
+            <position  x="329" y="21" />
+            <dimension x="36" y="17" />
+        </graphics>
+        <name>
+            <text>task3</text>
+         </name>
+        <toolspecific tool="ProM" version="5.2">
+            <logevent>
+                <name>INV_T16</name>
+                <type>auto</type>
+            </logevent>
+        </toolspecific>
+    </transition>
+    <transition id="trans_1">
+        <graphics>
+            <position  x="209" y="56" />
+            <dimension x="36" y="17" />
+        </graphics>
+        <name>
+            <text>task2</text>
+         </name>
+        <toolspecific tool="ProM" version="5.2">
+            <logevent>
+                <name>MAINTENANCE OF THE APPLICATION FORM FOR APPROVAL OF ACCOUNTS</name>
+                <type>auto</type>
+            </logevent>
+        </toolspecific>
+    </transition>
+    <transition id="trans_2">
+        <graphics>
+            <position  x="329" y="56" />
+            <dimension x="36" y="17" />
+        </graphics>
+        <name>
+            <text>task1</text>
+         </name>
+        <toolspecific tool="ProM" version="5.2">
+            <logevent>
+                <name>SUBJECTS SUBMITTED BY GROUPS TO MAINTAIN</name>
+                <type>auto</type>
+            </logevent>
+        </toolspecific>
+    </transition>
+    <transition id="trans_3">
+        <graphics>
+            <position  x="89" y="38" />
+            <dimension x="36" y="17" />
+        </graphics>
+        <name>
+            <text>task0</text>
+         </name>
+        <toolspecific tool="ProM" version="5.2">
+            <logevent>
+                <name>MADE A REQUEST FOR MAINTENANCE OF ACCOUNTS</name>
+                <type>auto</type>
+            </logevent>
+        </toolspecific>
+    </transition>
+    <arc id="arc_0" source="trans_2" target="place_1">
+        <toolspecific tool="ProM" version="5.2">
+            <spline>
+                <point x="347" y="56" />
+                <point x="352" y="56" />
+                <point x="358" y="56" />
+                <point x="364" y="56" />
+                <end x="369" y="56" />
+            </spline>
+        </toolspecific>
+    </arc>
+    <arc id="arc_1" source="place_0" target="trans_1">
+        <toolspecific tool="ProM" version="5.2">
+            <spline>
+                <point x="169" y="44" />
+                <point x="174" y="46" />
+                <point x="180" y="47" />
+                <point x="186" y="49" />
+                <end x="191" y="50" />
+            </spline>
+        </toolspecific>
+    </arc>
+    <arc id="arc_2" source="trans_0" target="place_0">
+        <toolspecific tool="ProM" version="5.2">
+            <spline>
+                <point x="311" y="23" />
+                <point x="279" y="26" />
+                <point x="211" y="32" />
+                <point x="174" y="36" />
+                <end x="169" y="36" />
+            </spline>
+        </toolspecific>
+    </arc>
+    <arc id="arc_3" source="place_3" target="trans_2">
+        <toolspecific tool="ProM" version="5.2">
+            <spline>
+                <point x="289" y="56" />
+                <point x="294" y="56" />
+                <point x="300" y="56" />
+                <point x="306" y="56" />
+                <end x="311" y="56" />
+            </spline>
+        </toolspecific>
+    </arc>
+    <arc id="arc_4" source="trans_3" target="place_0">
+        <toolspecific tool="ProM" version="5.2">
+            <spline>
+                <point x="107" y="38" />
+                <point x="112" y="38" />
+                <point x="118" y="38" />
+                <point x="124" y="38" />
+                <end x="129" y="38" />
+            </spline>
+        </toolspecific>
+    </arc>
+    <arc id="arc_5" source="place_2" target="trans_3">
+        <toolspecific tool="ProM" version="5.2">
+            <spline>
+                <point x="49" y="38" />
+                <point x="54" y="38" />
+                <point x="60" y="38" />
+                <point x="66" y="38" />
+                <end x="71" y="38" />
+            </spline>
+        </toolspecific>
+    </arc>
+    <arc id="arc_6" source="place_3" target="trans_0">
+        <toolspecific tool="ProM" version="5.2">
+            <spline>
+                <point x="283" y="48" />
+                <point x="291" y="44" />
+                <point x="302" y="37" />
+                <point x="311" y="32" />
+                <end x="315" y="29" />
+            </spline>
+        </toolspecific>
+    </arc>
+    <arc id="arc_7" source="trans_1" target="place_3">
+        <toolspecific tool="ProM" version="5.2">
+            <spline>
+                <point x="227" y="56" />
+                <point x="232" y="56" />
+                <point x="238" y="56" />
+                <point x="244" y="56" />
+                <end x="249" y="56" />
+            </spline>
+        </toolspecific>
+    </arc>
+</net>
+</pnml>

@@ -21,13 +21,14 @@ import java.util.Map;
 public class Test_compare_Deeky {
     public static void main(String[] args) {
         //解析模型
-        int nodeCount = 30;
-        double per = 0.4;
+        int nodeCount =40;
+        double per = 0.8;
+        int onepassCount =5;
         long startTime=System.currentTimeMillis();
         int unCorrectCount = 0;
         for(int j=0;j<10;j++){
             try {
-                Thread.sleep(10000);
+                Thread.sleep(1000);
             }catch (Exception e){}
             PetriNet net = ModelGenerate.generateSerialModel(nodeCount);
 
@@ -76,10 +77,10 @@ public class Test_compare_Deeky {
                 }catch (Exception e){
                     e.printStackTrace();
                 }
-
+                System.out.println("A* end");
                 openListNode = TraceDriver.initOpenList(trace,modelOrderList,-1);
                 openList.add(openListNode);
-                OnePassDriver.repair(10,null,openList,modelOrderList,modelOrder,trace, traceOrder);
+                OnePassDriver.repair(onepassCount,null,openList,modelOrderList,modelOrder,trace, traceOrder);
 
             }
 

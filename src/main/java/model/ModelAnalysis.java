@@ -108,7 +108,7 @@ public class ModelAnalysis {
     }
 
     public static void main(String[] args) {
-        PetriNet net = ModelLoader.load("/Users/wangqi/Desktop/bpmn/bxml/withLoop/loop1-1-9.xml");
+        PetriNet net = ModelLoader.load("/Users/wangqi/Desktop/bpmn/bxml/loop/loop1-1-9.xml");
 //        for(String key:net.gettMap().keySet()){
 //            System.out.println(net.gettMap().get(key).getId()+"  "+net.gettMap().get(key).getPreId());
 //        }

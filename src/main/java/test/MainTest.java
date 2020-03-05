@@ -35,7 +35,7 @@ public class MainTest {
     }
 
     public static void main(String[] args) {
-       String s = "task2.seq";
-        System.out.println(s.substring(0,s.length()-4));
+       String s = "P1";
+        System.out.println(s.substring(1));
     }
 }

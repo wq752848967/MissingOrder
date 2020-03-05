@@ -312,15 +312,15 @@ public class SplitRepair {
     }
     public static void main(String[] args) {
         int nodeCount = 40;
-        double per = 0.8;
-        PetriNet net = ModelGenerate.generateSerialModel(nodeCount);
-        //PetriNet net  = ModelLoader.load("/Users/wangqi/Desktop/bpmn/bxml/splite/s-60.xml");
+        double per = 0.5;
+        //PetriNet net = ModelGenerate.generateSerialModel(nodeCount);
+        PetriNet net  = ModelLoader.load("/Users/wangqi/Desktop/bpmn/bxml/splite/s-40.xml");
         //循环检测
         ModelAnalysis.findLoop(net);
         //模型transition优先级标注
         ModelPriotity.makePriority(net);
         long startTime=System.currentTimeMillis();
-        for (int k = 0; k < 10; k++) {
+        for (int k = 0; k < 100; k++) {
             String[] trace = TraceGenerate.generateSerialTrace(nodeCount);
             trace = RandomTrace.random(per,trace);
             //String[] trace = {"T0","T1","T2","T3","T5","T7","T10","T2","T4","T6","T7","T10","T2","T3","T5","T7","T8","T9"};

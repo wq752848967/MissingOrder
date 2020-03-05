@@ -80,6 +80,7 @@ public class LoopUtils {
                     }
 
                 }
+
                 //需要对branch进行扩充
                 ArrayList<String[]> addBranch = new ArrayList<String[]>();
                 for(String[] branch:branchs){

@@ -8,6 +8,7 @@ import Trace.utils.CostCalculator;
 import Trace.utils.PriorityComparetor;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Map;
 
 public class OnePassDriver {
@@ -18,6 +19,7 @@ public class OnePassDriver {
 
     public static void repair(int onePassCount,ArrayList<String[]> traceList, OpenList openList, ArrayList<ArrayList<String>> modelOrderList, Map<String,String> modelOrder, String traceSection[], Map<String,Integer> traceOrder){
         ArrayList<String[]> originTraceList  =  traceList;
+        HashSet<String> costHis = new HashSet<String>();
         //循环主体  取最小 切分，在放入
         while(!openList.IsEmpty()){
             //get mini  node context
@@ -65,6 +67,7 @@ public class OnePassDriver {
             CharNode[] charNodes = minNodeContext.getStrContext();
             int oldCostG = minNodeContext.getCostG();
             boolean[] oldHis = minNodeContext.getHis();
+            OpenList tempOpenList = new OpenList();
             for(int m=0;m<traceSection.length;m++){
                 if(oldHis[m]){
                     continue;
@@ -297,9 +300,19 @@ public class OnePassDriver {
 
                 newOpenListNode.setNode(newReCharIndex,reCharNode);
                 //重新计算cost
+
                 //pre init
                 int newCostH =  CostCalculator.calcCostH(modelOrderList,newOpenListNode.getStrContext());
                 newOpenListNode.setCostG(oldCostG+newCostG);
+                int newSumCostG=oldCostG+newCostG;
+                String newKey = newSumCostG+"/"+newCostH;
+                if(costHis.contains(newKey)){
+                    //System.out.println("skkkkkkk");
+                    continue;
+                }else {
+                    costHis.add(newKey);
+                }
+
 
                 if(newCostH==0)
                 {
@@ -319,7 +332,7 @@ public class OnePassDriver {
                         if(newCostG!=0){
                             newOpenListNode.setCostH(newCostH);
                             //是否存在完成的排序方式
-                            openList.add(newOpenListNode);
+                            tempOpenList.add(newOpenListNode);
                             if(LOG_OUT){
                                 String rr = CharNodeTools.getConsoleString(modelOrder,newOpenListNode.getStrContext());
                                 System.out.println(reTrans+" /end trace:"+rr);
@@ -334,7 +347,7 @@ public class OnePassDriver {
                     if(newCostG!=0){
                         newOpenListNode.setCostH(newCostH);
                         //是否存在完成的排序方式
-                        openList.add(newOpenListNode);
+                        tempOpenList.add(newOpenListNode);
                         if(LOG_OUT){
                             String rr = CharNodeTools.getConsoleString(modelOrder,newOpenListNode.getStrContext());
                             System.out.println(reTrans+" /end trace:"+rr);
@@ -348,26 +361,44 @@ public class OnePassDriver {
 
 
             }
-
+            //System.out.println(tempOpenList.size());
            //end while
-            int tempCounter = 0;
-            ArrayList<OpenListNode> list = new ArrayList<OpenListNode>();
-            while(tempCounter<onePassCount){
-                tempCounter++;
-                if(!openList.IsEmpty()){
-                    OpenListNode node = null;
-                    try{
-                        node = openList.getMinCostNode();
-                        list.add(node);
-                        openList.removeNode(node);
-                    }catch (Exception e){
+            if(tempOpenList.size()>0){
+                int tempCounter = 0;
+                ArrayList<OpenListNode> list = new ArrayList<OpenListNode>();
+                if(tempOpenList.size()<onePassCount){
+                    while(!tempOpenList.IsEmpty()){
+                        OpenListNode node = null;
+                        try{
+                            node = tempOpenList.getMinCostNode();
+                            list.add(node);
+                            tempOpenList.removeNode(node);
+                        }catch (Exception e){
 
+                        }
+                    }
+                }else{
+                    while(tempCounter<onePassCount){
+                        tempCounter++;
+                        if(!tempOpenList.IsEmpty()){
+                            OpenListNode node = null;
+                            try{
+                                node = tempOpenList.getMinCostNode();
+                                list.add(node);
+                                tempOpenList.removeNode(node);
+                            }catch (Exception e){
+
+                            }
+                        }
                     }
                 }
-            }
-            openList.clear();
-            for (OpenListNode node:list){
-                openList.add(node);
+
+                //System.out.println(onePassCount+":"+tempOpenList.size()+" "+list.size());
+                for (OpenListNode node:list){
+                    openList.add(node);
+                }
+                tempOpenList.clear();
+                //System.out.println(openList.size());
             }
 
         }
